@@ -11,3 +11,12 @@ include:
     shield: eyelash_sofle_peripheral_right nice_view
   - board: nice_nano_v2
     shield: settings_reset
+  # Diagnostic build, not for daily use. Same as the right half above plus USB
+  # CDC logging at ZMK's default DBG level. Flash it to the right half, plug
+  # that half into USB and open the CDC serial port to capture split
+  # connection and notification activity. See docs/split-latency-investigation.md
+  # for what this can and cannot tell you.
+  - board: nice_nano_v2
+    shield: eyelash_sofle_peripheral_right nice_view
+    snippet: zmk-usb-logging
+    artifact-name: eyelash_sofle_peripheral_right_debug
